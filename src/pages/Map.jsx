@@ -10,7 +10,6 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -52,7 +51,7 @@ const Map = () => {
       <header className="p-4 bg-background border-b">
         <h1 className="text-2xl font-bold">Interactive Map Application</h1>
       </header>
-      <main className="flex-grow">
+      <main className="flex-grow relative">
         <MapContainer center={[40.7128, -74.0060]} zoom={13} style={{ height: '100%', width: '100%' }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -72,7 +71,7 @@ const Map = () => {
         </MapContainer>
       </main>
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent>
+        <DialogContent className="z-[1000]">
           <DialogHeader>
             <DialogTitle>Add New Location</DialogTitle>
             <DialogDescription>
